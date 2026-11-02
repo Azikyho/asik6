@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6 — Azamat Askar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-container">
+    <header class="header">
+        <div class="header-inner">
+            <h1>Assignment 6</h1>
+            <nav aria-label="Main navigation">
+                <a href="#part1">Profile</a><a href="#part2">Effects</a><a href="#part3">Skills &amp; DOM</a><a href="#part4">Animation</a>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="intro">
+            <p class="eyebrow">JQUERY / SELECTORS, EFFECTS &amp; ANIMATIONS</p>
+            <h2>Welcome to My Portfolio</h2>
+            <p>A small, interactive playground for learning jQuery.</p>
+        </div>
+        <noscript><p>Please enable JavaScript to use this demonstration.</p></noscript>
+        <p id="loadNotice" role="status">Loading jQuery from the CDN. If this message remains, check your internet connection and reload.</p>
+        <div class="main">
+            <section class="box" id="part1" aria-labelledby="profileTitle">
+                <p class="eyebrow">PART 1 · TASKS 0–1</p>
+                <h3 id="profileTitle">Azamat Askar</h3>
+                <p class="group-label">IT-2503 · Web Technologies</p>
+                <h4 id="headline">Learning web development</h4>
+                <p>I am exploring how HTML, CSS and JavaScript work together. This portfolio demonstrates selectors, effects and interactive elements.</p>
+                <div class="interests"><span>Coding</span><span>Sports</span><span>Music</span><span>Reading</span></div>
+                <div class="actions" role="group" aria-label="Choose theme">
+                    <button class="btn btn-dark" id="lightTheme" type="button" aria-pressed="true">Light Theme</button>
+                    <button class="btn btn-secondary" id="darkTheme" type="button" aria-pressed="false">Dark Theme</button>
+                </div>
+                <p class="note" id="themeStatus" role="status">Light theme is active.</p>
+            </section>
+            <section class="box" id="part2" aria-labelledby="aboutTitle">
+                <p class="eyebrow">PART 2 · TASK 2</p>
+                <h3 id="aboutTitle">About Me</h3>
+                <p>My interests include coding, sports, music and reading. My learning goal is to build clear, interactive web pages.</p>
+                <div id="aboutDetails" class="inset">
+                    <p><strong>Currently learning jQuery!</strong></p>
+                    <ul><li>Practice selecting and updating page elements.</li><li>Explore effects through small examples.</li><li>Build confidence with event handling.</li></ul>
+                </div>
+                <div class="actions" role="group" aria-label="About me visibility">
+                    <button class="btn btn-dark" id="hideAbout" type="button">Hide</button>
+                    <button class="btn btn-secondary" id="showAbout" type="button">Show</button>
+                    <button class="btn btn-secondary" id="toggleAbout" type="button">Toggle</button>
+                </div>
+            </section>
+            <section class="box" id="galleryTask" aria-labelledby="galleryTitle">
+                <p class="eyebrow">PART 2 · TASK 3</p>
+                <h3 id="galleryTitle">Interest Gallery</h3>
+                <p class="note">Original SVG illustrations of coding and music.</p>
+                <div class="gallery" id="galleryImages">
+                    <figure><img src="assets/images/coding.svg" alt="Illustration of a laptop displaying code" width="420" height="280"><figcaption>Coding · One idea at a time</figcaption></figure>
+                    <figure><img src="assets/images/music.svg" alt="Illustration of headphones and sound waves" width="420" height="280"><figcaption>Music · A creative break</figcaption></figure>
+                </div>
+                <div class="actions" role="group" aria-label="Gallery fade effects">
+                    <button class="btn btn-dark" id="fadeIn" type="button">Fade In</button>
+                    <button class="btn btn-secondary" id="fadeOut" type="button">Fade Out</button>
+                    <button class="btn btn-secondary" id="fadeToggle" type="button">Fade Toggle</button>
+                </div>
+            </section>
+            <section class="box" id="favoritesTask" aria-labelledby="favoritesTitle">
+                <p class="eyebrow">PART 2 · TASK 4</p>
+                <h3 id="favoritesTitle">A Few Favorites</h3>
+                <p class="note">Editable examples, not confirmed personal preferences.</p>
+                <div class="favorite">
+                    <h4><button class="panel-toggle" id="musicHeading" type="button" aria-controls="musicPanel" aria-expanded="false">My Favorite Music <span aria-hidden="true">+</span></button></h4>
+                    <div class="favorite-panel" id="musicPanel" role="region" aria-labelledby="musicHeading"><p>Example: instrumental music for a study session. Replace this with a favorite artist or genre.</p></div>
+                </div>
+                <div class="favorite">
+                    <h4><button class="panel-toggle" id="movieHeading" type="button" aria-controls="moviePanel" aria-expanded="false">My Favorite Movie <span aria-hidden="true">+</span></button></h4>
+                    <div class="favorite-panel" id="moviePanel" role="region" aria-labelledby="movieHeading"><p>Example: a science-fiction movie. Replace this with a movie title and a reason for choosing it.</p></div>
+                </div>
+                <div class="favorite">
+                    <h4><button class="panel-toggle" id="subjectHeading" type="button" aria-controls="subjectPanel" aria-expanded="false">My Favorite Subject <span aria-hidden="true">+</span></button></h4>
+                    <div class="favorite-panel" id="subjectPanel" role="region" aria-labelledby="subjectHeading"><p>Example: Web Technologies, with hands-on HTML, CSS and JavaScript exercises. Edit this to reflect your preference.</p></div>
+                </div>
+                <div class="actions"><button class="btn btn-dark" id="expandAll" type="button">Expand All</button><button class="btn btn-secondary" id="collapseAll" type="button">Collapse All</button></div>
+            </section>
+            <section class="box full-box" id="part3" aria-labelledby="skillsTitle">
+                <p class="eyebrow">PART 3 · TASK 5</p>
+                <h3 id="skillsTitle">My Skills</h3>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label class="form-label" for="skillInput">New skill</label>
+                        <input class="form-control" id="skillInput" type="text" placeholder="For example, Bootstrap" maxlength="80" aria-describedby="skillMessage">
+                        <div class="actions"><button class="btn btn-dark" id="addSkill" type="button">Add Skill</button><button class="btn btn-secondary" id="prependSkill" type="button">Prepend Skill</button><button class="btn btn-secondary" id="removeSkill" type="button">Remove Skill</button></div>
+                        <p class="feedback" id="skillMessage" role="status">Add to the end, prepend to the start, or remove the last skill.</p>
+                        <ul class="skill-list" id="skillList"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>jQuery</li></ul>
+                    </div>
+                    <div class="col-md-6" id="part4">
+                        <p class="eyebrow">PART 4 · TASK 8</p>
+                        <h4>Skills in Motion</h4>
+                        <p class="note">Demonstration values only, not assessed proficiency.</p>
+                        <div class="skill-meter"><div class="meter-label"><span id="htmlLabel">HTML</span><span>Target: 90%</span></div><div class="meter-track"><div class="meter-fill" data-target="90" role="progressbar" aria-labelledby="htmlLabel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div></div>
+                        <div class="skill-meter"><div class="meter-label"><span id="cssLabel">CSS</span><span>Target: 75%</span></div><div class="meter-track"><div class="meter-fill" data-target="75" role="progressbar" aria-labelledby="cssLabel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div></div>
+                        <div class="skill-meter"><div class="meter-label"><span id="jsLabel">JavaScript</span><span>Target: 60%</span></div><div class="meter-track"><div class="meter-fill" data-target="60" role="progressbar" aria-labelledby="jsLabel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div></div>
+                        <button class="btn btn-dark" id="animateSkills" type="button" aria-pressed="false">Animate My Skills</button>
+                        <p class="note" id="animationStatus" role="status">All bars start at 0%.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="box" id="linkTask" aria-labelledby="linkTitle">
+                <p class="eyebrow">PART 3 · TASK 6</p>
+                <h3 id="linkTitle">Explore &amp; Connect</h3>
+                <p>Switch between two public homepages. These are not my personal profiles.</p>
+                <p><a id="socialLink" href="https://github.com/" target="_blank" rel="noopener noreferrer">Visit GitHub (opens in a new tab)</a></p>
+                <button class="btn btn-dark" id="changeLink" type="button">Change Link</button>
+                <p class="note" id="linkStatus" role="status">Current destination: https://github.com/</p>
+            </section>
+            <section class="box" id="formTask" aria-labelledby="formTitle">
+                <p class="eyebrow">PART 3 · TASK 7</p>
+                <h3 id="formTitle">Live Input Preview</h3>
+                <form id="previewForm">
+                    <label class="form-label" for="nameInput">Name</label>
+                    <input class="form-control mb-3" id="nameInput" type="text" name="name" autocomplete="name" placeholder="Your name">
+                    <label class="form-label" for="emailInput">Email</label>
+                    <input class="form-control" id="emailInput" type="email" name="email" autocomplete="email" placeholder="you@example.com">
+                    <p class="note">Local preview only. Nothing is submitted or saved.</p>
+                </form>
+                <div class="inset live-preview" aria-live="polite" aria-atomic="true"><p><strong>Name:</strong> <span id="namePreview">Not entered</span></p><p><strong>Email:</strong> <span id="emailPreview">Not entered</span></p></div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer"><p>&copy; 2026 Azamat Askar · IT-2503 · Assignment 6</p><p>Built with HTML, CSS, Bootstrap &amp; jQuery</p></footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
